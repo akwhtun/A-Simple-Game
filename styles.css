@@ -81,7 +81,6 @@ svg{
     color: var(--bg-color);
 }
 
-
 .items{
     background: none;
     width: 420px;
@@ -90,9 +89,10 @@ svg{
     top: 0;
     left: 0;
 }
-.item{
-    width: 50px;
-    height: 35px;
+
+.item-container{
+    width: 30px;
+    height: 25px;
     background: none;
     position: absolute;
 }
@@ -156,4 +156,22 @@ svg{
 #x-right{
     right: 1px;
     top:50%;
+}
+
+.item.dragging{
+    opacity: 0.5;
+}
+
+svg.bs{
+    opacity: 0.5;
+    animation: svgsb 0.6s 0.3s;
+}
+
+@keyframes svgsb {
+    100%{
+        width: 110px;
+        height: 90px;
+        opacity: 1;
+        color: var(--item-y);
+    }
 }
