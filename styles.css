@@ -1,0 +1,159 @@
+:root{
+--bg-color : #728085d0;
+--color : #333;
+--inner : #666667f4;
+--cross : #fffafa;
+--item-y : #050505;
+--item-x: #d6f1ff;
+}
+
+html,body{
+ margin:0;
+ padding: 0;   
+}
+
+.wrapper{
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin-bottom: 50px;
+    color:var(--color);
+}
+
+.circle{
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background-color:var(--color);
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+                -5px -5px 10px var(--cross);
+}
+
+.inner-circle{
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    background-color: var(--cross);
+    margin: 25px;
+}
+
+.x-cross, .y-cross{
+    border-radius: 5px;
+    background-color:var(--color);
+    position: absolute;
+}
+
+.x-cross{
+    width: 420px;
+    height: 25px;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+}
+.y-cross{
+    width: 25px;
+    height: 420px;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.moon{
+    position: absolute;
+    top:20%;
+    left:18%;
+}
+svg{
+    width: 100px;
+    height: 80px;
+    color: var(--bg-color);
+}
+
+
+.items{
+    background: none;
+    width: 420px;
+    height: 420px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.item{
+    width: 50px;
+    height: 35px;
+    background: none;
+    position: absolute;
+}
+.top-container{
+    left: 50%;
+    top:0px;
+    transform: translateX(-50%);
+}
+.bottom-container{
+    left: 50%;
+    bottom:0px;
+    transform: translateX(-50%);
+}
+.left-container{
+    left:0px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.right-container{
+    right: 0px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.center-container{
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+.y{
+    width: 60px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: var(--item-y);
+    position: absolute;
+    transform: translateX(-50%);
+    cursor: move;
+}
+
+#y-top{
+    left: 50%;
+    top:1px;
+}
+#y-bottom{
+    left: 50%;
+    bottom:1px;
+}
+.x{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--item-x);
+    position: absolute;
+    transform: translateY(-50%);
+    cursor: move;
+}
+#x-left{
+    left: 1px;
+    top:50%;
+}
+#x-right{
+    right: 1px;
+    top:50%;
+}
