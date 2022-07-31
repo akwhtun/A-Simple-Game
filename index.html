@@ -20,6 +20,8 @@
             </div>
             <div class="x-turn tit"><span class="player-x"></span> <span class="text">turn</span></div>
             <div class="y-turn tit"><span class="player-y"></span> <span class="text">turn</span></div>
+            <div class="x-win tit"><span class="player-x"></span> <span class="text">win</span></div>
+            <div class="y-win tit"><span class="player-y"></span> <span class="text">win</span></div>
         </div>
         <div class="circle">
             <div class="inner-circle"></div>
@@ -33,16 +35,16 @@
             </div>
             <div class="items">
                 <div class="item-container top-container">
-                    <div class="y item" draggable="true" data-item="y-item" id="y-top"></div>
+                    <div class="y y1 item" draggable="true" data-item="y-item" id="y-top"></div>
                 </div>
                 <div class="item-container bottom-container">
-                    <div class="y item" draggable="true" data-item="y-item" id="y-bottom"></div>
+                    <div class="y y2 item" draggable="true" data-item="y-item" id="y-bottom"></div>
                 </div>
                 <div class="item-container left-container">
-                    <div class="x item" draggable="true" data-item="x-item" id="x-left"></div>
+                    <div class="x x1 item" draggable="true" data-item="x-item" id="x-left"></div>
                 </div>
                 <div class="item-container right-container">
-                    <div class="x item" draggable="true" data-item="x-item" id="x-right"></div>
+                    <div class="x x2 item" draggable="true" data-item="x-item" id="x-right"></div>
                 </div>
                 <div class="item-container center-container"></div>
             </div>
@@ -53,6 +55,7 @@
         </div>
        <div class="btn-group">
             <button class="start-btn" type="button">Start Now</button>
+            <button class="restart" type="button">Restart</button>
         </div>
     </div>
     

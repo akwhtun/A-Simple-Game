@@ -1,9 +1,16 @@
+
 const containers = document.querySelectorAll('.item-container');
 const items = document.querySelectorAll('.item');
 const title = document.querySelector('.title');
 const crossSord = document.querySelector('.cross-sords');
+const circle = document.querySelector('.circle');
+const inner = document.querySelector('.inner-circle');
+const xCross = document.querySelector('.x-cross');
+const yCross = document.querySelector('.y-cross');
 const xTurn = document.querySelector('.x-turn');
 const yTurn = document.querySelector('.y-turn');
+const xWin = document.querySelector('.x-win');
+const yWin = document.querySelector('.y-win');
 
 //containers
 const leftContainer = document.querySelector('.left-container');
@@ -12,6 +19,12 @@ const bottomContainer = document.querySelector('.bottom-container');
 const rightContainer = document.querySelector('.right-container');
 const centerContainer = document.querySelector('.center-container');
 
+//items
+const x1 = document.querySelector('.x1');
+const x2 = document.querySelector('.x2');
+const y1 = document.querySelector('.y1');
+const y2 = document.querySelector('.y2');
+
 //icons
 const moon = document.querySelector('svg');
 const cross = document.querySelector('.cross')
@@ -19,6 +32,7 @@ const cross = document.querySelector('.cross')
 //btns
 const cover = document.querySelector('.cover');
 const start = document.querySelector('.start-btn');
+const restart = document.querySelector('.restart');
 
 
 items.forEach(item => {
@@ -47,6 +61,8 @@ containers.forEach(container => {
         return;
     }else{
         checkItem(container, dragitem , player);
+        checkWinner(y1, y2, x1, x2, yWin);
+        checkWinner(x1, x2, y1, y2, xWin);
     }
      
     })
@@ -121,6 +137,31 @@ if(drag == dragItemContainer.children[0] && con == itemcontainer){
 }
 }
 
+function checkWinner(win1, win2, lose1, lose2, whowin){
+    if(win1 == centerContainer.children[0] || 
+        win1 == rightContainer.children[0]){
+        if(win2 == centerContainer.children[0] || 
+            win2 == rightContainer.children[0]){
+                if(lose1 == leftContainer.children[0] || 
+                    lose1 == bottomContainer.children[0]){
+                    if(lose2 == leftContainer.children[0] || 
+                        lose2 == bottomContainer.children[0]){
+                            var allTitle = title.querySelectorAll('.tit');
+                            for(var j =0; j< allTitle.length; j++){
+                            allTitle[j].style.display = 'none';
+                            whowin.style.display='inline-block';
+                            }
+                            circle.style.backgroundColor='#fffafa'; 
+                            inner.style.backgroundColor='#333'; 
+                            xCross.style.backgroundColor='#fffafa';
+                            yCross.style.backgroundColor='#fffafa';
+                    }
+                }
+        }
+    }
+}
+
+
 start.addEventListener('click', () => {
     cover.classList.add('cvr');
     var allTitle = title.querySelectorAll('.tit');
@@ -128,4 +169,10 @@ start.addEventListener('click', () => {
         allTitle[i].style.display = 'none';
         crossSord.style.display='flex';
     }
+    start.style.display='none';
+    restart.style.display='block';
+})
+
+restart.addEventListener('click', () => {
+    location.reload();
 })
